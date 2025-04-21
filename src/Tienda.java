@@ -47,10 +47,7 @@ public class Tienda {
 	                // Reducimos el stock del producto
 	                producto.reducirStock(totalVenta);    
 	                // Mostramos venta por pantalla
-	                System.out.println("Venta "+ producto.getNombre()+" realizada. ");
-	                System.out.println("Subtotal : " + total);
-	                System.out.println("Decuento aplicado: "+descuento);
-	                System.out.println("Total : " + totalConDescuento);
+	                venderProducto(producto, total, descuento, totalConDescuento);
 	            } else {
 	                System.out.println("Stock insuficiente.");
 	            }
@@ -62,6 +59,13 @@ public class Tienda {
 	    if (!productoEncontrado) {
 	        System.out.println("Producto "+nombreProducto +" no encontrado.");
 	    }
+	}
+
+	private void venderProducto(Producto producto, double total, double descuento, double totalConDescuento) {
+		System.out.println("Venta "+ producto.getNombre()+" realizada. ");
+		System.out.println("Subtotal : " + total);
+		System.out.println("Decuento aplicado: "+descuento);
+		System.out.println("Total : " + totalConDescuento);
 	}
 
 	private double CalcularDescuentoVenta(double total, double descuento) {
