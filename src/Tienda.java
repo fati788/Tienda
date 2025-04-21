@@ -36,7 +36,7 @@ public class Tienda {
 	                }
 
 	                // Calculamos el total con el descuento
-	                double totalConDescuento = total - (total * descuento);
+	                double totalConDescuento = CalcularDescuentoVenta(total, descuento);
 	                
 	                // Reducimos el stock del producto
 	                producto.reducirStock(totalVenta);    
@@ -56,6 +56,11 @@ public class Tienda {
 	    if (!productoEncontrado) {
 	        System.out.println("Producto "+nombreProducto +" no encontrado.");
 	    }
+	}
+
+	private double CalcularDescuentoVenta(double total, double descuento) {
+		double totalConDescuento = total - (total * descuento);
+		return totalConDescuento;
 	}
 
 	public void mostrarInventario() {
