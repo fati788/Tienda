@@ -11,6 +11,7 @@ public class Producto {
 	private double precio;
 	private int stock;
 	
+	
 	/**
 	 * Constructor con todos los parametros del producto
 	 * @param nombre es un string que representa el nombre del producto
