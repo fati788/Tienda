@@ -15,7 +15,7 @@ public class Tienda {
 	}
 	
 	// Vender producto
-	public void venderProducto(String nombreProducto, int cantidadVendida) {
+	public void venderProducto(String nombreProducto, int totalVenta) {
 	    boolean productoEncontrado = false;  // Variable para verificar si se encontró el producto
 	    for (Producto producto : productos) {
 	        	        
@@ -24,8 +24,8 @@ public class Tienda {
 	            productoEncontrado = true;  // Marcamos que el producto fue encontrado
 	            
 	            // Verificamos si hay suficiente stock
-	            if (producto.getStock() >= cantidadVendida) {
-	                double total = producto.getPrecio() * cantidadVendida;
+	            if (producto.getStock() >= totalVenta) {
+	                double total = producto.getPrecio() * totalVenta;
 	                double descuento = 0;
 
 	                // Aplicamos descuento según el total
@@ -39,7 +39,7 @@ public class Tienda {
 	                double totalConDescuento = total - (total * descuento);
 	                
 	                // Reducimos el stock del producto
-	                producto.reducirStock(cantidadVendida);    
+	                producto.reducirStock(totalVenta);    
 	                // Mostramos venta por pantalla
 	                System.out.println("Venta "+ producto.getNombre()+" realizada. ");
 	                System.out.println("Subtotal : " + total);
